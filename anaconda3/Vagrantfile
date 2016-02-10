@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 $conda_installation = <<SCRIPT
 yum -y install bzip2
-curl https://repo.continuum.io/archive/Anaconda3-2.4.1-Linux-x86_64.sh -o anaconda.sh || exit 1;
+curl https://repo.continuum.io/archive/Anaconda3-2.5.0-Linux-x86_64.sh -o anaconda.sh || exit 1;
 bash anaconda.sh -b || exit 1;
 
 grep -q anaconda ~/.bashrc;
