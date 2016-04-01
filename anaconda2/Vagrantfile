@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 $conda_installation = <<SCRIPT
 yum -y install bzip2
-curl https://repo.continuum.io/archive/Anaconda2-2.5.0-Linux-x86_64.sh -o anaconda.sh || exit 1;
+curl https://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh -o anaconda.sh || exit 1;
 bash anaconda.sh -b || exit 1;
 
 grep -q anaconda ~/.bashrc;
@@ -14,6 +14,11 @@ source ~/.bashrc
 
 conda info || exit 1;
 rm anaconda.sh || exit 1;
+
+yum clean all || exit 1;
+
+echo '' > ${HOME}/.bash_history
+history -c
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
