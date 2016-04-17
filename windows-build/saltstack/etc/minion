@@ -1,0 +1,14 @@
+## originally from https://github.com/JustinCarmony/vagrant-salt-example/blob/master/saltstack/etc/minion
+
+## Look locally for files
+#master: localhost
+file_client: local
+
+## Where your salt states & files are located
+file_roots:
+  base:
+    - /srv/saltstack/salt
+
+pillar_roots:
+  base:
+    - /srv/saltstack/pillars
