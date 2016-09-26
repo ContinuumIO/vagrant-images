@@ -5,6 +5,6 @@
 
 conda-build:
   cmd.run:
-    - name: 'C:\MC3x64\Scripts\conda.exe install -yq conda-build vs2015_runtime'
+    - name: 'C:\MC3x64\Scripts\conda.exe install -yq 7za'
     - require:
       - sls: miniconda3

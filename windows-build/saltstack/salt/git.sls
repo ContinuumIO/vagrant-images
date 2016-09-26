@@ -3,8 +3,8 @@
 {% set env_path = salt['environ.get']('PATH') %}
 {% set env_path = env_path ~ ';' ~ conda_dir %}
 
-conda-build:
+install_m2_git:
   cmd.run:
-    - name: 'C:\MC3x64\Scripts\conda.exe install -yq conda-build vs2015_runtime'
+    - name: 'C:\MC3x64\Scripts\conda.exe install -yq m2-git posix'
     - require:
       - sls: miniconda3

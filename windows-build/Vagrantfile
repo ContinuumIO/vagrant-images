@@ -67,6 +67,7 @@ Vagrant.configure(2) do |config|
   # end
 
   #config.vm.provision :shell, path: "shell/main.cmd"
+  config.vm.provision "shell", inline: "cmd.exe /c ""IF NOT EXIST C:\tmp MKDIR C:\tmp"""
   #config.vm.provision :shell, path: "shell/InstallBoxStarter.bat"
   #config.vm.provision "file",
   #                    source: "shell/RunBoxStarterGist.bat",
@@ -78,6 +79,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision :salt do |salt|
     # run locally, don't wait for master to tell it what to do
     salt.masterless = true
+
+    salt.version = "2016.3.2"
 
     # Relative location of configuration file to use for minion
     # since we need to tell our minion to run in masterless mode
