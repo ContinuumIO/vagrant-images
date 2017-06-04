@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 $conda_installation = <<SCRIPT
 yum -y install bzip2
-curl https://repo.continuum.io/miniconda/Miniconda3-4.3.11-Linux-x86_64.sh -o miniconda.sh || exit 1;
+curl https://repo.continuum.io/miniconda/Miniconda3-4.3.14-Linux-x86_64.sh -o miniconda.sh || exit 1;
 bash miniconda.sh -b || exit 1;
 
 grep -q miniconda ~/.bashrc;
