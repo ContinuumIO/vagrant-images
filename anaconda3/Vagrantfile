@@ -15,6 +15,11 @@ source ~/.bashrc
 conda info || exit 1;
 rm anaconda.sh || exit 1;
 conda clean -t || exit 1;
+
+yum clean all || exit 1;
+
+echo '' > ${HOME}/.bash_history
+history -c
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
