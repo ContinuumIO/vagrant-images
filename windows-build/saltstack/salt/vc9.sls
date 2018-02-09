@@ -8,6 +8,8 @@ C:\Downloads\VCForPython27.msi:
 
 vc9:
   cmd.run:
-    - name: C:\Downloads\VCForPython27.msi /qn /norestart
+    - name: msiexec /i c:\Downloads\VCForPython27.msi /qn /norestart ALLUSERS=1
     - require:
       - file: C:\Downloads\VCForPython27.msi
+    - creates:
+      - C:\Program Files (x86)\Common Files\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat

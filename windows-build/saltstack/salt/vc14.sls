@@ -9,14 +9,16 @@ C:\Downloads\BuildTools2015Admin.xml:
 C:\Downloads\visualcppbuildtools_full.exe:
   file.managed:
     - name:   C:\Downloads\visualcppbuildtools_full.exe
-    - source: http://download.microsoft.com/download/5/d/6/5d6a1865-11ff-41f8-8af6-60e92d9bbd0b/visualcppbuildtools_full.exe
-    - source_hash: sha256=4a72493b317b14eef590e9de8befce32ee2b1f49840e68495683200aa21abb6b
+    - source: https://download.microsoft.com/download/5/d/6/5d6a1865-11ff-41f8-8af6-60e92d9bbd0b/visualcppbuildtools_full.exe
+    - source_hash: sha256=cd922cfae0c0f7835bb646984c39f8f7598b996e62e3f32ff0cc5c720c088634
     - requires:
       - module: download
 
 vc14:
   cmd.run:
-    - name: 'C:\Downloads\visualcppbuildtools_full.exe /Quiet /NoRestart /AdminFile C:\Downloads\BuildTools2015Admin.xml'
+    - name: C:\Downloads\visualcppbuildtools_full.exe /Quiet /NoRestart /AdminFile C:\Downloads\BuildTools2015Admin.xml
     - require:
       - file: C:\Downloads\visualcppbuildtools_full.exe
       - file: C:\Downloads\BuildTools2015Admin.xml
+    - creates:
+      - C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat
